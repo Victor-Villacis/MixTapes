@@ -1,0 +1,21 @@
+<div class="col-md-12" ng-controller="myProductAppCtrl as vm">
+    <div class="page-header">
+        <h1>List of Mix-Tapes, Click and vote to bring to the top</h1>
+    </div>
+
+    <a ng-click="open()" class="btn btn-primary" href="#/product/new"> Add Tape </a>
+    <br><br>
+
+    <div class="list-group">
+      <button type="button" class="list-group-item"  ng-repeat="product in vm.products"
+      ng-click="vm.showProduct(product._id)">
+        <div class="role" >
+            <div class="col-md-8"><h3 style="color:orange">{{ product.name }}</h3></div>
+            <div class="col-md-3"><h4 style="color:red">{{ product.price | currency:"USD$" }}</h4></div>
+            <!-- Tally up votes here -->
+            <!-- <div class="col-md-1"><h4>{{ product.vote}}</h4>1</div> -->
+        </div>
+        <h4 class="col-md-12">{{ product.description }}</h4>
+      </button>
+    </div>
+</div>

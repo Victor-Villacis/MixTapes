@@ -1,0 +1,82 @@
+<nav class="col-lg-12"  role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand"><span class="glyphicon glyphicon-headphones"></span> Mix-Tape-Central</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container" style="background-color:black">
+    <div id="main" ng-app="myProductsApp" ng-controller="mainCtrl">
+      <div class="row">
+        <div class="col-lg-12" style="position:relative; background-color:white">
+          <iframe id="player" width="100%" height="200" scrolling="no" frameborder="no"></iframe>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <table class="table" ng-cloak>
+            <tr>
+              <td colspan="3">
+                <form novalidate class="form-inline" role="form" ng-submit="searchPlaylists()">
+                  <div class="form-group">
+                    <label class="sr-only" for="input-keyword">keyword</label>
+                    <input type="text" name="keyword" id="input-keyword" class="form-control" placeholder="keyword" ng-model="keyword" />
+                  </div>
+                  <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                </form>
+              </td>
+            </tr>
+
+       <tr id="loader">
+              <td colspan="4" class="text-center">
+                <img src="http://star-mfg.com/skin/frontend/Star/default/images/video-loading.gif" />
+              </td>
+            </tr>
+
+            <!-- Gets Playlists -->
+            <tr id="playlist-{{$index}}" ng-repeat="playlist in playlists" ng-controller="playlistCtrl">
+              <td class="left"><img src="{{playlist.artwork_url}}" /></td>
+              <td><h3 class="text-muted">{{playlist.user.username}}</h3><br /><h4 class="text-muted">{{playlist.title}}</h4></td>
+              <td class="right"><button class="btn btn-default" ng-click="getTracks()"><span class="glyphicon glyphicon-download"></span></button></td>
+            </tr>
+            <!-- Tracks in Playlists -->
+            <tr id="track-{{$index}}" ng-repeat="track in tracks" ng-controller="trackCtrl">
+              <td class="left"><img src="{{track.artwork_url}}" /></td>
+              <td><h3 class="text-muted">{{track.user.username}}</h3><br /><h4 class="text-muted">{{track.title}}</h4></td>
+              <td class="right"><button class="btn btn-default" ng-click="addToMyTrack()"><span class="glyphicon glyphicon-plus"></span></button></td>
+            </tr>
+          </table>
+        </div>
+
+
+
+        <div class="col-md-6">
+          <div id="my-tracks" ng-app="myProductsApp" ng-controller="myTracksCtrl">
+            <table ng-cloak class="table">
+              <tr>
+                <td colspan="3">
+                  <div class="btn-group">
+                    <button class="btn btn-default" ng-click="play()"><span class="glyphicon glyphicon-play"></span></button>
+                    <button class="btn btn-default" ng-click="prev()"><span class="glyphicon glyphicon-backward"></span></button>
+                    <button class="btn btn-default" ng-click="next()"><span class="glyphicon glyphicon-forward"></span></button>
+                    <button id="btn-repeat-song" class="btn btn-default btn-repeat active" ng-click="repeatSong()"><span class="glyphicon glyphicon-repeat"></span></button>
+                    <button id="btn-repeat-playlist" class="btn btn-default btn-repeat" ng-click="repeatPlaylist()"><span class="glyphicon glyphicon-refresh"></span></button>
+                  </div>
+                </td>
+              </tr>
+              <!-- My Playlists Track -->
+              <tr id="my-track-{{$index}}" ng-repeat="myTrack in myTracks" ng-controller="myTrackCtrl">
+                <td class="left"><img src="{{myTrack.artwork_url}}" /></td>
+                <td><h3 class="text-muted">{{myTrack.user.username}}</h3><br /><h4 class="text-muted">{{myTrack.title}}</h4></td>
+                <td class="right"><button class="btn btn-default" ng-click="remove($index)"><span class="glyphicon glyphicon-remove"></span></button></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+ 

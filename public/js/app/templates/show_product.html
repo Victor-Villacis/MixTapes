@@ -1,0 +1,63 @@
+<div class="row">
+
+  <div class="page-header">
+    <h1>Mix-Tape</h1>
+  </div>
+
+  <div class="col-md-12">
+    <div class="col-md-6">
+        <div class="thumbnail product-detail">
+          <img src="http://lorempixel.com/500/300/abstract" height="200">
+          <div class="caption">
+            <h1>{{ vm.product.name}}</h1>
+            <h3>{{ vm.product.description}}</h3>
+            <h4>{{ vm.product.price | currency:"USD$ "}}</h4>
+            <p><a href="#/index" class="btn btn-primary" role="button">Purchase</a></p>
+            <h1><a href="#/sound">Listen On Sound Cloud</a></h1>
+          </div>
+        </div>
+        <p><a href="#/index" class="btn btn-danger" role="button">Trash</a> </p>
+        <p><a href="#/list" class="btn btn-danger" role="button">Vote Up</a> </p>
+
+    </div>
+    <div class="col-md-6">
+        <!-- form new comment -->
+        <div class="col-md-12">
+          <form class="form-inline" ng-submit="vm.saveComment()">
+            <div class="form-group">
+              <input type="hidden" ng-model="vm.comment.product_id">
+              <label for="body"></label>
+              <input type="text" ng-model="vm.new_comment.text" class="form-control" id="body" placeholder="Tell us how you feel?">
+            </div>
+            <button type="submit" class="btn btn-info">Send</button>
+          </form>
+          <br>
+          <!-- status element -->
+          <div ng-show="vm.show_element_status" ng-class="{'alert-danger': vm.status_data.status == false, 'alert-success': vm.status_data.status==true}" class="alert " role="alert">
+            {{vm.status_data.message}}
+          </div>
+        </div>
+
+        <!-- list comments -->
+        <div class="col-md-12">
+          <h2>Comments</h2>
+          <div class="media" ng-repeat="comment in vm.product.comments | orderBy:'date':true">
+            <div class="media-left">
+              <a >
+                <img class="media-object" src="http://lorempixel.com/400/200/technics/" width="100" height="100">
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">by {{comment.user_ip}}</h4>
+              <p>{{comment.text}}</p>
+              <p class="text-muted">public at {{comment.date | date:'dd/MM/yyyy  h:mma'}}</p>
+            </div>
+          </div>
+        </div>
+      
+      </div> <!-- end col-md-6 -->
+
+    </div>
+</div>
+  
+  
