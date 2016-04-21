@@ -13,7 +13,7 @@ var mongoose = require('mongoose');
 //     console.log('Connected to Database');
 // });
 
-mongoose.connect('mongodb://victor:password@ds013931.mlab.com:13931/heroku_hl4s34sm');
+mongoose.connect('mongodb://victor:password@ds013891.mlab.com:13891/heroku_hl4s34sm');
 
 
 //product controller with mongoose conection
