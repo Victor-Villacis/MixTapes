@@ -8,10 +8,13 @@ var PORT = process.env.PORT || 3000;
 
 //mongoose connection
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/mixtapes', function(err, res) {
-    if(err) throw err;
-    console.log('Connected to Database');
-});
+// mongoose.connect('mongodb://localhost/mixtapes', function(err, res) {
+//     if(err) throw err;
+//     console.log('Connected to Database');
+// });
+
+mongoose.connect('mongodb://victor:password@ds013931.mlab.com:13931/heroku_qrq235bh');
+
 
 //product controller with mongoose conection
 var product_controller = require('./controllers/products')(mongoose);
