@@ -1,6 +1,6 @@
-"use strict"
 
-//init angular app 
+
+//init angular app
 angular.module("myProductsApp",["ngRoute"])
 	.config(function($routeProvider){
 
@@ -10,7 +10,11 @@ angular.module("myProductsApp",["ngRoute"])
 	                controllerAs: "vm",
 	                templateUrl: "/js/app/templates/index.html"
 	            })
-
+	            .when("/", {
+	            		controller: "myProductsApp",
+	            		controllerAs: "vm",
+	            		templateUrl: "/js/app/templates/carousel.html"
+	            })
 	            .when("/list", {
 	                controller: "myProductAppCtrl",
 	                controllerAs: "vm",
