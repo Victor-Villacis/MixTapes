@@ -39,7 +39,7 @@ var router = express.Router();
 // home page
 router.get('/', function(req, res) {
     //res.render('index', { title: 'Express' }); 
-    res.sendfile('./public/js/app/templates/index.html');
+    res.render('./public/js/app/templates/index.html');
 });
 
 //routes
