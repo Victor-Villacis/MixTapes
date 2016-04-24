@@ -10,6 +10,13 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <link rel="stylesheet" href="../../../stylesheets/style.css">
     </head>
+    <body ng-app="myProductsApp">
+
+  <!-- inline styles -->
+  <div class="splash" ng-cloak="">
+    <p>Loading</p>
+  </div>
+  <!-- Rest of app -->
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -21,7 +28,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand glyphicon glyphicon-headphones" style="font-size:30px" href="#"> MixTape</a>
+          <a class="navbar-brand glyphicon glyphicon-headphones" style="font-size:30px" href="#/"> MixTape</a>
           <a class="navbar-brand glyphicon" style="font-size:30px" href="#/list"> Tapes</a>
           <a class="navbar-brand glyphicon" style="font-size:30px" href="#/product/new"> addTape</a>
           <a class="navbar-brand glyphicon" style="font-size:30px" href="#/sound"> Listen</a>
@@ -47,14 +54,14 @@
         <br/>
         <h3><ul>Tired of standing on street corners trying to sell your Mixtape?</ul></h3>
         <h3><ul>You've come to the right place. Post & sell your mixtape on here.</ul></h3>
-        <h3><ul>Don't be an unsigned artists anymore.</ul></h3>
+        <h3><ul>Don't be an unsigned artist anymore.</ul></h3>
       </div>
     </div>
 
-    <body ng-app="myProductsApp">
-        <div class="container">
-            <div class="col-md-12" ng-view></div>
-        </div>
+          <div class="container">
+              <div class="col-xs-12" ng-view></div>
+          </div>
+
 
     <footer class="footer">
       <div class="container">
@@ -69,11 +76,11 @@
     <!-- Sound Cloud Api -->
     <script src="https://connect.soundcloud.com/sdk.js"></script>
     <script src="../js/app/controllers/sound_ctrl.js"></script>
-
+    <!-- jQuery and Bootstrap CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- Angular CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
     <script src=" https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-route.js"></script>
 
