@@ -1,14 +1,3 @@
-/* javascript splash */
-[ng-cloak].splash {
-    display: block !important;
-}
-.splash {
-    display: none;
-}
-.splash {
-    background-color: #FFFF33;
-}
-
 
 /* Sticky footer styles
 -------------------------------------------------- */
