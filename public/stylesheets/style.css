@@ -6,13 +6,16 @@
     display: none;
 }
 .splash {
-    background-color: #428bca;
+    background-color: #FFFF33;
 }
 
 
 /* Sticky footer styles
 -------------------------------------------------- */
-
+.navbar {
+  color:white;
+  background-color: #FFFF66;
+}
 
 html {
   position: relative;
