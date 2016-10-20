@@ -9,7 +9,12 @@ angular.module("myProductsApp",["ngRoute"])
 	                controller: "myProductAppCtrl",
 	                controllerAs: "vm",
 	                templateUrl: "/js/app/templates/index.html"
-	            })
+	            }) 
+	            .when("/", {
+	            		controller: "myProductsApp",
+	            		controllerAs: "vm",
+	            		templateUrl: "/js/app/templates/splash.html"
+	            })      
 	            .when("/", {
 	            		controller: "myProductsApp",
 	            		controllerAs: "vm",

@@ -10,16 +10,11 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <link rel="stylesheet" href="../../../stylesheets/style.css">
     </head>
+    
     <body ng-app="myProductsApp">
 
-  <!-- inline styles -->
-  <div class="splash" ng-cloak="">
-    <p>Loading</p>
-  </div>
-  <!-- Rest of app -->
-
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="navbar">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -28,7 +23,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand glyphicon glyphicon-headphones" style="font-size:30px" href="#/"> MixTape</a>
+          <a class="navbar-brand glyphicon glyphicon-headphones" style="font-size:30px" href="#/"><font color=""> MixTape</a>
           <a class="navbar-brand glyphicon" style="font-size:30px" href="#/list"> Tapes</a>
           <a class="navbar-brand glyphicon" style="font-size:30px" href="#/product/new"> addTape</a>
           <a class="navbar-brand glyphicon" style="font-size:30px" href="#/sound"> Listen</a>
@@ -48,7 +43,7 @@
       </div>
     </nav>
 
-     <div class="jumbotron" style="background-image: url(http://coolblackppt.com/wp-content/uploads/2013/08/Backgrounds-tivo.jpg)">
+    <div class="jumbotron" style="background-image: url(https://sites.google.com/site/spongey437/lines.jpg)">
       <div class="container">
         <h1 class="col-xs-4">Mix-Tapes-4-Sale</h1>
         <br/>
@@ -81,10 +76,12 @@
 
 
 
-
-    <!-- Sound Cloud Api -->
+    <script src="https://connect.soundcloud.com/splash.js"></script>
+     <!-- Sound Cloud Api -->
     <script src="https://connect.soundcloud.com/sdk.js"></script>
     <script src="../js/app/controllers/sound_ctrl.js"></script>
+   <script src="../js/app/controllers/splash.js"></script>
+
     <!-- jQuery and Bootstrap CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -96,7 +93,6 @@
     <!-- appControllers -->
     <script src="../js/app/routes.js"></script>
     <script src="../js/app/controllers/products_ctrl.js"></script>
-
 
 
 

@@ -1,18 +1,10 @@
-/* javascript splash */
-[ng-cloak].splash {
-    display: block !important;
-}
-.splash {
-    display: none;
-}
-.splash {
-    background-color: #428bca;
-}
-
 
 /* Sticky footer styles
 -------------------------------------------------- */
-
+.navbar {
+  color:white;
+  background-color: #FFFF66;
+}
 
 html {
   position: relative;
